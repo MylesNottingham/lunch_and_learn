@@ -3,6 +3,10 @@ class CountryService
     get_names.sample
   end
 
+  def get_capital(country)
+    get_url("/v3.1/name/#{country.gsub(" ", "%20")}").first[:capital].first
+  end
+
   private
 
   def get_names
