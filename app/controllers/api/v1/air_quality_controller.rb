@@ -10,7 +10,11 @@ class Api::V1::AirQualityController < ApplicationController
 
     capital = CountryService.new.get_capital(country)
 
-    air_quality_data = api_ninja_service.air_quality(capital, country)
+    if capital
+      air_quality_data = api_ninja_service.air_quality(capital, country)
+    else
+      return render json: { error: "Country not found" }, status: :not_found
+    end
 
     air_quality_params = {
       data: air_quality_data,

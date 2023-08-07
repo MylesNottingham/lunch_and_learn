@@ -4,7 +4,11 @@ class CountryService
   end
 
   def get_capital(country)
-    get_url("/v3.1/name/#{country.gsub(" ", "%20")}").first[:capital].first
+    begin
+      get_url("/v3.1/name/#{country.gsub(" ", "%20")}").first[:capital].first
+    rescue
+      return nil
+    end
   end
 
   private
