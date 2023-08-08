@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?accept=application/json&channelId=UCluQ5yInbeAkkeCndNnUhpw&key=AIzaSyB9Mw9-LmeVAMyfvj5wB_nSMcsVQcBUWNQ&part=snippet&q=nameofcountry
+    uri: https://www.googleapis.com/youtube/v3/search?accept=application/json&channelId=UCluQ5yInbeAkkeCndNnUhpw&key=KEY&part=snippet&q=nameofcountry
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 08 Aug 2023 20:22:37 GMT
+      - Tue, 08 Aug 2023 20:46:11 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -53,10 +53,10 @@ http_interactions:
           },
           "items": []
         }
-  recorded_at: Tue, 08 Aug 2023 20:22:37 GMT
+  recorded_at: Tue, 08 Aug 2023 20:46:11 GMT
 - request:
     method: get
-    uri: https://api.unsplash.com/search/photos/?Accept-Version=v1&client_id=mzKzkjUy4PLu0NLXaO0mMYmuu7P4rsigJQmkQPraODo&query=nameofcountry
+    uri: https://api.unsplash.com/search/photos/?Accept-Version=v1&client_id=KEY&query=nameofcountry
     body:
       encoding: US-ASCII
       string: ''
@@ -119,21 +119,21 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 08 Aug 2023 20:22:37 GMT
+      - Tue, 08 Aug 2023 20:46:12 GMT
       Age:
-      - '699'
+      - '2114'
       X-Served-By:
-      - cache-iad-kiad7000169-IAD, cache-den8238-DEN
+      - cache-iad-kiad7000169-IAD, cache-den8256-DEN
       X-Cache:
       - MISS, HIT
       X-Cache-Hits:
       - 0, 1
       X-Timer:
-      - S1691526158.657928,VS0,VE2
+      - S1691527572.175533,VS0,VE1
       Vary:
       - Accept-Encoding,Authorization,Accept-Language,client-geo-region,Accept
     body:
       encoding: ASCII-8BIT
       string: '{"total":0,"total_pages":0,"results":[]}'
-  recorded_at: Tue, 08 Aug 2023 20:22:37 GMT
+  recorded_at: Tue, 08 Aug 2023 20:46:12 GMT
 recorded_with: VCR 6.2.0
