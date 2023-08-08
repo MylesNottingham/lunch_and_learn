@@ -11,7 +11,11 @@ class Api::V1::LearningResourcesController < ApplicationController
 
     video_data = video_service.find_video_by_country(country)
 
-    video = Video.new(video_data)
+    video = if video_data[:items].any?
+              Video.new(video_data)
+            else
+              {}
+            end
 
     images_data = image_service.find_images_by_country(country)
 
@@ -19,7 +23,13 @@ class Api::V1::LearningResourcesController < ApplicationController
       Image.new(data)
     end
 
-    learning_resource = LearningResource.new(video, images)
+    learning_resource_data = {
+      country: country,
+      video: video,
+      images: images
+    }
+
+    learning_resource = LearningResource.new(learning_resource_data)
 
     render json: LearningResourceSerializer.new(learning_resource)
   end
