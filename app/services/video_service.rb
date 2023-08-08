@@ -1,7 +1,7 @@
 class VideoService
   def find_video_by_country(country)
     channel_id = "UCluQ5yInbeAkkeCndNnUhpw"
-    get_url("?key=#{ENV["YOUTUBE_API_KEY"]}&q=#{country}&channelId=#{channel_id}&part=snippet")
+    get_url("?key=#{ENV['YOUTUBE_API_KEY']}&q=#{country}&channelId=#{channel_id}&part=snippet")
   end
 
   private

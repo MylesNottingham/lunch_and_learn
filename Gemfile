@@ -25,7 +25,7 @@ gem "jsonapi-serializer"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -36,19 +36,19 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
-# HTTP client library that provides a common interface over many adapters (such as Net::HTTP) and embraces the concept of Rack middleware when processing the request/response cycle.
-gem 'faraday'
+# HTTP client library
+gem "faraday"
 
 # Simple Rails app configuration using ENV and a single YAML file
-gem 'figaro'
+gem "figaro"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem "rspec-rails"
-  gem "pry"
+  gem "debug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails"
   gem "faker"
+  gem "pry"
+  gem "rspec-rails"
 end
 
 group :development do
@@ -57,8 +57,8 @@ group :development do
 end
 
 group :test do
-  gem "simplecov"
   gem "shoulda-matchers"
-  gem 'vcr'
-  gem 'webmock'
+  gem "simplecov"
+  gem "vcr"
+  gem "webmock"
 end

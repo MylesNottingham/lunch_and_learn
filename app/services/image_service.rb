@@ -1,6 +1,6 @@
 class ImageService
   def find_images_by_country(country)
-    get_url("search/photos/?query=#{country}&client_id=#{ENV["UNSPLASH_API_KEY"]}")
+    get_url("search/photos/?query=#{country}&client_id=#{ENV['UNSPLASH_API_KEY']}")
   end
 
   private

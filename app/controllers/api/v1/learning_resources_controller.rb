@@ -3,17 +3,17 @@ class Api::V1::LearningResourcesController < ApplicationController
     video_service = VideoService.new
     image_service = ImageService.new
 
-    if params[:country]
-      country = params[:country]
-    else
-      country = CountryService.new.random_country
-    end
+    country = if params[:country]
+                params[:country].downcase
+              else
+                CountryService.new.random_country
+              end
 
-    video_data = (video_service.find_video_by_country(country))
+    video_data = video_service.find_video_by_country(country)
 
     video = Video.new(video_data)
 
-    images_data = (image_service.find_images_by_country(country))
+    images_data = image_service.find_images_by_country(country)
 
     images = images_data[:results].map do |data|
       Image.new(data)

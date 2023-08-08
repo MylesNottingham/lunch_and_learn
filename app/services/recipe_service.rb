@@ -1,6 +1,6 @@
 class RecipeService
   def find_recipe_by_country(country)
-    get_url("?type=public&q=#{country.gsub(" ", "%20")}")
+    get_url("?type=public&q=#{country.gsub(' ', '%20')}")
   end
 
   private
