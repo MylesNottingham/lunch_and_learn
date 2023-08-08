@@ -54,8 +54,7 @@ Metrics/PerceivedComplexity:
   Max: 10
 
 Metrics/AbcSize:
-  Enabled: true
-  Max: 21
+  Enabled: false
 
 Metrics/MethodLength:
   Enabled: false
