@@ -66,7 +66,6 @@ RSpec.describe "Api::V1::Users", type: :request do
     end
 
     context "sad path" do
-
       it "returns an error if the name is missing" do
         user_params = {
           "name": nil,
@@ -92,11 +91,11 @@ RSpec.describe "Api::V1::Users", type: :request do
 
       it "returns an error if the email is missing" do
         user_params = {
-            "name": "Odell",
-            "email": nil,
-            "password": "treats4lyf",
-            "password_confirmation": "treats4lyf"
-          }.to_json
+          "name": "Odell",
+          "email": nil,
+          "password": "treats4lyf",
+          "password_confirmation": "treats4lyf"
+        }.to_json
 
         expect(User.count).to eq(0)
 
