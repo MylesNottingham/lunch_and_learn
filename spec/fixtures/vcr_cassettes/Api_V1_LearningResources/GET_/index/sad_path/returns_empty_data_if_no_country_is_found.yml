@@ -25,7 +25,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 09 Aug 2023 03:46:58 GMT
+      - Wed, 09 Aug 2023 05:38:15 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -53,7 +53,7 @@ http_interactions:
           },
           "items": []
         }
-  recorded_at: Wed, 09 Aug 2023 03:46:58 GMT
+  recorded_at: Wed, 09 Aug 2023 05:38:15 GMT
 - request:
     method: get
     uri: https://api.unsplash.com/search/photos/?Accept-Version=v1&client_id=UNSPLASH_API_KEY&query=nameofcountry
@@ -119,21 +119,21 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 09 Aug 2023 03:46:58 GMT
+      - Wed, 09 Aug 2023 05:38:15 GMT
       Age:
-      - '27360'
+      - '34037'
       X-Served-By:
-      - cache-iad-kiad7000169-IAD, cache-den8263-DEN
+      - cache-iad-kiad7000169-IAD, cache-den8266-DEN
       X-Cache:
       - HIT, HIT
       X-Cache-Hits:
       - 2, 1
       X-Timer:
-      - S1691552819.912947,VS0,VE10
+      - S1691559496.659553,VS0,VE1
       Vary:
       - Accept-Encoding,Authorization,Accept-Language,client-geo-region,Accept
     body:
       encoding: ASCII-8BIT
       string: '{"total":0,"total_pages":0,"results":[]}'
-  recorded_at: Wed, 09 Aug 2023 03:46:58 GMT
+  recorded_at: Wed, 09 Aug 2023 05:38:15 GMT
 recorded_with: VCR 6.2.0
