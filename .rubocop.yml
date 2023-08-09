@@ -14,8 +14,7 @@ AllCops:
     - 'config/**'
     - 'config/environments/production.rb'
     - 'spec/spec_helper.rb'
-    # - 'db/migrate/**'
-    # - 'db/**'
+    - 'db/schema.rb'
 
 Style/HashSyntax:
   Enabled: false
