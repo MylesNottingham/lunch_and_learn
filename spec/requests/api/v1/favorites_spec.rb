@@ -170,6 +170,36 @@ RSpec.describe "Api::V1::Favorites", type: :request do
 
         expect(Favorite.count).to eq(0)
       end
+
+      it "returns an error if the recipe link is not unique per user" do
+        Favorite.create!(
+          user_id: @user1.id,
+          country: "thailand",
+          recipe_link: "https://www.tastingtable.com/cook/recipes/crab-fried-rice-recipe-thai-food",
+          recipe_title: "Crab Fried Rice (Khaao Pad Bpu)"
+        )
+
+        favorite_params = {
+          "api_key": @user1.api_key,
+          "country": "thailand",
+          "recipe_link": "https://www.tastingtable.com/cook/recipes/crab-fried-rice-recipe-thai-food",
+          "recipe_title": "Crab Fried Rice (Khaao Pad Bpu)"
+        }.to_json
+
+        expect(Favorite.count).to eq(1)
+
+        post api_v1_favorites_path, params: favorite_params
+
+        expect(response).to have_http_status(:unprocessable_entity)
+
+        error = JSON.parse(response.body, symbolize_names: true)
+
+        expect(error).to have_key(:errors)
+        expect(error[:errors]).to be_a(Array)
+        expect(error[:errors].first).to eq("Recipe link has already been taken")
+
+        expect(Favorite.count).to eq(1)
+      end
     end
   end
 end
