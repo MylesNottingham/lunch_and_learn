@@ -43,10 +43,3 @@ Favorite.create!(
   recipe_link: "https://food52.com/recipes/25423-the-nonsensical-hot-peppercorn-peanut-brittle",
   recipe_title: "The Nonsensical Hot Peppercorn Peanut Brittle"
 )
-
-Favorite.create!(
-  user_id: user2.id,
-  country: "korea",
-  recipe_link: "https://food52.com/recipes/25423-the-nonsensical-hot-peppercorn-peanut-brittle",
-  recipe_title: "The Nonsensical Hot Peppercorn Peanut Brittle"
-)
