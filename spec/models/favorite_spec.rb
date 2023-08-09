@@ -29,7 +29,7 @@ RSpec.describe Favorite, type: :model do
       )
     end
 
-    it 'validates uniqueness of recipe_link within the scope of user_id' do
+    it "validates uniqueness of recipe_link within the scope of user_id" do
       favorite
 
       should validate_uniqueness_of(:recipe_link).scoped_to(:user_id)
