@@ -3,13 +3,11 @@ class Api::V1::FavoritesController < ApplicationController
     favorite = Favorite.new(params)
 
     if favorite.save
-      render json: { message: "Favorite added successfully" }, status: :created
+      render json: { success: "Favorite added successfully" }, status: :created
+    elsif favorite.errors.full_messages.include?("User must exist")
+      render json: { errors: ["Invalid API key"] }, status: :unauthorized
     else
-      if favorite.errors.full_messages.include?("User must exist")
-        render json: { errors: ["Invalid API key"] }, status: :unauthorized
-      else
-        render json: { errors: favorite.errors.full_messages }, status: :unprocessable_entity
-      end
+      render json: { errors: favorite.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
